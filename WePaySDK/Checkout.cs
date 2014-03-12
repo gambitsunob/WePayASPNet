@@ -47,20 +47,31 @@ namespace WePaySDK
 
         [JsonIgnore]
         public string accessToken { get; set; }
+
+
         public long account_id { get; set; }
         public string short_description { get; set; }
         public string type { get; set; }
+        public string currency { get; set; }
         public decimal amount { get; set; }
-        public string mode { get; set; }
-        public string fee_payer { get; set; }
-        public decimal app_fee { get; set; } 
-        public string reference_id { get; set; }
         public string long_description { get; set; }
-        public string callback_uri { get; set; }
-        public string redirect_uri { get; set; }
         public string payer_email_message { get; set; }
         public string payee_email_message { get; set; }
+        public string reference_id { get; set; }
+        public decimal app_fee { get; set; }
+        public string fee_payer { get; set; }
+        public string redirect_uri { get; set; }
+        public string callback_uri { get; set; }
+        public string fallback_uri { get; set; }
+        public bool auto_capture { get; set; }
+        public bool require_shipping { get; set; }
+        public decimal shipping_fee { get; set; }
+        public bool charge_tax { get; set; }
+        public string mode { get; set; }
         public long preapproval_id { get; set; }
+        public string funding_sources { get; set; }
+        public long payment_method_id { get; set; }
+        public string payment_method_type { get; set; }
     }
 
     public class CheckoutCreateResponse
