@@ -60,6 +60,7 @@ namespace WePaySDK
     {
         public string error { get; set; }
         public string error_description { get; set; }
+        public long error_code { get; set; }
     }
 
     public class WePayException : Exception
