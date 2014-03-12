@@ -17,7 +17,10 @@ namespace WePaySDK
             client.Headers.Add("Authorization", "Bearer " + accessToken);
             client.Headers.Add("Content-Type", "application/json");
             client.Headers.Add("User-Agent", "WePay API C# SDK");
-            var data = JsonConvert.SerializeObject(request);
+
+            var settings = new Newtonsoft.Json.JsonSerializerSettings();
+            settings.StringEscapeHandling = Newtonsoft.Json.StringEscapeHandling.EscapeNonAscii;
+            var data = JsonConvert.SerializeObject(request, Formatting.None, settings);
             string uriString = WePayConfig.endpoint(WePayConfig.productionMode) + actionUrl;
             var json = "";
             try
